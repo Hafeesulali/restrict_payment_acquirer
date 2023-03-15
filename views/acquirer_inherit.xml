@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="restrict_provider" model="ir.ui.view">
+            <field name="name">restrict payment provider</field>
+            <field name="model">payment.provider</field>
+            <field name="inherit_id" ref="payment.payment_provider_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='configuration']//field[@name='maximum_amount']" position="after">
+                    <field name="maximum_amount" attrs="{'invisible':True}"/>
+                    <field name="minimum_amount"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
